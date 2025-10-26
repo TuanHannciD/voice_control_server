@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"cloudflared tunnel --config ./tunnel-config/config.yml run my-voiceapp-tunnel\" \"node server.js\"",
+    "debug": "concurrently \"cloudflared tunnel --config ./tunnel-config/config.yml run my-voiceapp-tunnel --loglevel debug\" \"node --max-old-space-size=4096 server.js\"",
+    "dev": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +17,8 @@
     "ngrok": "^5.0.0-beta.2",
     "puppeteer": "^24.10.0",
     "ws": "^8.18.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   }
 }

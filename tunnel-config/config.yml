@@ -1,0 +1,9 @@
+tunnel: e0973142-dc59-479a-b716-9445a93f7491
+credentials-file: C:\Users\TUNA\.cloudflared\e0973142-dc59-479a-b716-9445a93f7491.json
+
+ingress:
+  - hostname: voiceapp.pp.ua
+    service: http://localhost:3000
+  - hostname: www.voiceapp.pp.ua
+    service: http://localhost:3000
+  - service: http_status:404 
